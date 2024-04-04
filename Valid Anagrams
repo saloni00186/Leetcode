@@ -1,0 +1,47 @@
+'''
+Anagrams = same alphabets in a word 
+
+Test Cases
+1. 
+Input s = "eat", t = "tea"
+output = true 
+
+2. 
+Input s = 'bat', t= 'ice'
+output = false 
+
+3. 
+input s = "", t = "ice"
+output = false 
+
+4. 
+Input: s = "anagram", t = "nagaram"
+Output: true
+a = 3, 3
+n = 1, 1
+g = 1, 1
+r = 1, 1
+
+
+Approch
+- time: O(s+t) = O(n) - iterate through both strings 
+- space: 
+
+Implement 
+Verification
+
+CODE
+'''
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        
+        for i in set(t):
+            if t.count(i) != s.count(i):
+                return False
+
+        return True
+
+ 
+#counter class returns a dictionary containing the counts as key-value pairs
